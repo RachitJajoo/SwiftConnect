@@ -31,7 +31,7 @@ const server = app.listen(process.env.PORT,()=>{
 
 
 const io = socket(server,{
-    cors:"http://localhost:5173",
+    cors:"https://swift-connect-peach.vercel.app/",
     credentials : true,
 })
 
