@@ -7,7 +7,11 @@ const messageRoutes = require("./routes/messageRoutes.js");
 const socket = require("socket.io");
 require("dotenv").config();
 
-app.use(cors());
+const corsOptions = {
+    origin: 'https://swiftconnect.onrender.com'
+  };
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 
