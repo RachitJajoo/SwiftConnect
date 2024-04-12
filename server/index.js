@@ -7,11 +7,13 @@ const messageRoutes = require("./routes/messageRoutes.js");
 const socket = require("socket.io");
 require("dotenv").config();
 
-const corsOptions = {
-    origin: 'https://swiftconnect.onrender.com'
-  };
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://swift-connect-peach.vercel.app");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 
