@@ -8,7 +8,7 @@ const socket = require("socket.io");
 require("dotenv").config();
 
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://swift-connect-peach.vercel.app");
+    res.header("Access-Control-Allow-Origin", "http://localhost:5173");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
@@ -22,7 +22,7 @@ app.use("/api/auth" , userRoutes);
 
 app.use("/api/messages" , messageRoutes);
 
-app.get("/" , (req,res,next)=> console.log("WOKRING"));
+app.get("/" , (req,res,next)=> console.log("WORKING"));
 
 mongoose.connect(process.env.MONGO_URL)
 .then(() =>{ 
@@ -37,7 +37,7 @@ const server = app.listen(process.env.PORT,()=>{
 
 
 const io = socket(server,{
-    cors:"https://swift-connect-peach.vercel.app/",
+    cors:"http://localhost:5173",
     credentials : true,
 })
 
