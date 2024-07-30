@@ -28,7 +28,7 @@ export default function Chat(){
         
     },[]);
     useEffect(() => {
-      const newSocket = io('https://swiftconnect.onrender.com');
+      const newSocket = io('https://swiftconnectbackend.vercel.app');
       socket.current = newSocket;
     
       return () => {
